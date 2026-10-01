@@ -38,7 +38,7 @@
                 <div class="avatar">{{ (username or 'U')[0]|upper }}</div>
                 <div class="user-info">
                     <div class="user-name">{{ username or 'Пользователь' }}</div>
-                    <div class="user-plan"><i class="ri-flashlight-line"></i> Free tier</div>
+                    <div class="user-plan"><i class="ri-flashlight-line"></i> Mistral Free</div>
                 </div>
             </div>
             <a href="/logout" class="nav-item nav-logout">
@@ -59,17 +59,18 @@
                 <i class="ri-robot-2-line"></i>
                 <select id="modelSelect">
                     {% for m in models %}
-                    <option value="{{ m.id }}">{{ m.name }} · {{ m.vendor }}</option>
+                    <option value="{{ m.id }}" title="{{ m.desc }}">{{ m.name }}</option>
                     {% endfor %}
                 </select>
-                <span class="badge-free">FREE</span>
+                <span class="badge-free">MISTRAL</span>
             </div>
 
             <div class="topbar-right">
                 <div class="balance-chip" title="Баланс">
                     <i class="ri-wallet-3-line"></i>
-                    <span id="balanceChip">0 ₽</span>
+                    <span id="balanceChip">{{ '%.2f'|format(balance or 0) }} ₽</span>
                 </div>
+
                 <button class="btn btn-primary btn-sm" id="openTopupBtn">
                     <i class="ri-add-line"></i> Пополнить
                 </button>

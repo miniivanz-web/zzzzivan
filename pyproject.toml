@@ -8,6 +8,7 @@ dependencies = [
     "dotenv>=0.9.9",
     "flask>=3.0.3",
     "mysql-connector>=2.2.9",
+    "requests>=2.32.4",
 ]
 
 [project.scripts]
